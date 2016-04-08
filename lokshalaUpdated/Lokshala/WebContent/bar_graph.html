@@ -19,7 +19,7 @@
 	<header>
 		<img src="images/logo.png" />
 		<div class="login_button">
-			<button type="button" class="btn btn-success btn-sm">
+			<button type="button" class="btn btn-success btn-sm" style="margin-top:9%;>
 				<a href="smc.html">Logout</a>
 			</button>
 		</div>
@@ -31,20 +31,30 @@
 	<div id="chartContainer"
 		style="height: 200px; width: 100; margin-bottom: 50px;"></div>
 	<div class="page-footer">
-		<div class="col-md-6 col-sm-6 col-xs-6">
+		<div class="col-md-4 col-sm-4 col-xs-4">
 			<div class="footer-image">
 				<div class="feedback_button">
-					<button type="button" class="btn btn-success btn-sm">
-						<a href="application.html">View Applicant</a>
+					<button type="button" class="btn btn-success btn-sm" style="margin-top:9%;">
+						<a href="bar_graph.html">statistics</a>
 					</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-6 col-xs-6">
+		<div class="col-md-4 col-sm-4 col-xs-4">
 			<div class="footer-image">
 				<div class="post_button">
-					<button type="button" class="btn btn-success btn-sm">
-						<a href="#">Post an event</a>
+					<button type="button" class="btn btn-success btn-sm" style="margin-top:9%;>
+						<a href="pevent.html" id="pevent">Post an event</a>
+					</button>
+				</div>
+			</div>
+		</div>
+
+<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="footer-image">
+				<div class="view_button">
+					<button type="button" class="btn btn-success btn-sm" style="margin-top:9%;>
+						<a  href="application.html" id="vapp">View Applicant</a>
 					</button>
 				</div>
 			</div>
@@ -53,5 +63,13 @@
 	</div>
 	<script type="text/javascript" src="js/bargraph.js"></script>
 	<script type="text/javascript" src="js/canvasjs.min.js"></script>
+	<script type="text/javascript">
+		$("#pevent").click(function(){
+			window.location.href = "pevent.html"
+		});
+		$("#vapp").click(function(){
+			window.location.href = "application.html"
+		});
+	</script>
 </body>
 </html>

@@ -17,34 +17,14 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<script type="text/javascript">
-	$( document ).ready(function() {
-	$(".cross").hide();
-	$(".menu").hide();
-	$(".hamburger").click(function() {
-	$(".menu").slideToggle("slow", function() {
-		$(".hamburger").hide();
-		$(".cross").show();
-		});
-	});
-
-	$(".cross").click(function() {
-	$(".menu").slideToggle("slow", function() {
-    $(".cross").hide();
-    $(".hamburger").show();
-  });
-});
-});
-</script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  
 </head>
 <body>
 		<header>
 		<img src="images/logo.png" />
 		<section class="main">
 		</section>	
-		<button class="hamburger">&#9776;</button>
-		<button class="cross">&#735;</button>
 		 <div class="login_button">
 			<button type="button" class="btn btn-success btn-sm" id="logout"><a>Logout</a></button>
 		</div> 		
@@ -52,26 +32,26 @@
 	<div class="gap">
 	<div class="row">
 		<div class="col-xs-12 col-md-12 col-sm-12">
-			<div class="schooltitle"></div>
+			<div class="schooltitle" style="    text-align: center;  color: #002266; font-family: serif;    font-size: 2em;font-weight: 600; margin-top:6%;"></div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-1 col-sm-1 col-md-1"></div>
 			<div class="col-xs-10 col-md-10 col-sm-10 picture">
-				<img src="images/abt.jpg"  class="img-responsive"  />
+				<img src="images/abt.jpg"  class="img-responsive"  style="margin-top:10%;"/>
 			</div>
 		<div class="col-xs-1 col-sm-1 col-md-1"></div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-xs-6 col-sm-6 col-md-6">
-			<img src="images/clock.png" width=30px height=30px align=left></img>
-			<div class="office" id="time">
+			<img src="images/clock.png"style=" width:30px; height:30px; align:left;     margin-left: 15%;  margin-top: 12%;"></img>
+			<div class="office" id="time" style="    margin-top: -10%;  margin-left: 32%;">
 				<P></P>
 			</div>
 		</div>
 		<div class="col-xs-6 col-sm-6 col-md-6">
-			<img src="images/address.png" width=30px height=30px align=left></img>
+			<img src="images/address.png" width=30px height=30px align=left style="margin-top: 7%; margin-left: -6%;"></img>
 			<div class="office" id="address">
 				<P>SAPHALE</P>
 			</div>
@@ -79,8 +59,10 @@
 	</div>
 </div>
 <div class="home-button">
-	<a class="btn-floating btn-large waves-effect waves-#43a047 green darken-1" href="eventAfterLogin.html"><i class="material-icons">home</i></a>
-</div>
+<button type="button" class="btn btn-success btn-sm" style="    border-radius: 100%;    font-size: 30px; margin-top:17em;">
+                <a href="eventAfterLogin.html"><i class="fa fa-home"></i></a>
+    </button>
+           </div>
 
 
     <div class="page-footer">			
@@ -111,7 +93,7 @@
 			<div class="modal-body" >
 				<section class="main" style="padding:10px;">
 					<form class="search" method="post" action="index.html" >
-						<select name="sname" id="schoolResults" class="dropdown">
+						<select name="sname" id="schoolResults" style="width:100%;">
 							
 						</select>
 					</form>

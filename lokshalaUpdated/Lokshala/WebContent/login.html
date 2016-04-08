@@ -26,15 +26,17 @@
 			<div>
 				<h4 style="margin-top: 10%; text-align: center;">OR</h4>
 				<span>
-						<!--  <i class="fa fa-facebook"></i> -->
-						<center><a href="smcLogin.html">Smc login?</a></center>
-					
-				</span>
+				<a id="register" href="register.html"><button  class="create1"><h6 style="display:inline; padding: 0% 0% 0% 2%;">Sign Up</h6></button></a>
+				<a id="smcLogin" href="smcLogin.html"><button  class="create2"><h6 style="display:inline; padding: 0% 0% 0% 2%;">SMC login?</h6></button></a>
+			</span>
 			</div>
 	</form>
 	</fieldset>
 	<div class="feedback">
 		login successful <br /> redirecting...
+	</div>
+	<div class="feedback">
+		login unsuccessful <br />
 	</div>
 
 	</form>
@@ -46,8 +48,15 @@
 
 
 	<script type="text/javascript">
+	$('#smcLogin').click(function(){
+		window.location.href = "smcLogin.html";
+	});
+	$('#register').click(function(){
+		window.location.href = "register.html";
+	});
 		$("#login")
 				.click(function(){
+					console.log('login');
 							$.ajax({
 										url : 'LoginServlet',
 										type : 'POST',
@@ -62,11 +71,12 @@
 										success : function(data, textStatus,
 												jQxhr) {
 											if (data.msg === 'authenticated') {
+												console.log('here');
 												window.location.href = "eventAfterLogin.html"
 											}
 											else{
-												
-												alert('error!');
+										
+												  console.log('here');
 											}
 										},
 										error : function(jqXhr, textStatus,

@@ -36,6 +36,112 @@ header img{
 }
 
 
+<!--home button-->
+.home-button {
+	text-align: center;
+	position:absolute;
+	top:0;
+	right:8px;
+	padding-left:1px;
+ 
+  }
+
+.home-button a {
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+.home-button a:hover{
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+
+
+<!--feedback button-->
+.feedback_button {
+	text-align: center;
+	position:absolute;
+	top:0;
+	right:8px;
+	padding-left:1px;
+ 
+  }
+
+.feedback_button .btn {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 6px 3px;
+  
+}
+.feedback_button a {
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+.feedback_button a:hover{
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+
+<!--post button -->
+.post_button {
+	text-align: center;
+	position:absolute;
+	top:0;
+	right:8px;
+	padding-left:1px;
+ 
+  }
+
+.post_button .btn {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 6px 3px;
+  
+}
+.post_button a {
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+.post_button a:hover{
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+
+<!--view button-->
+.view_button {
+	text-align: center;
+	position:absolute;
+	top:0;
+	right:8px;
+	padding-left:1px;
+ 
+  }
+
+.view_button .btn {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 6px 3px;
+  
+}
+.view_button a {
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+.view_button a:hover{
+	text-decoration:none;
+	color:white;
+	font-weight: 600;
+}
+
 /*searchbox*/
 
 .results li a {

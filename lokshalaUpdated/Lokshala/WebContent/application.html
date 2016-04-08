@@ -13,7 +13,7 @@
 <header>
 		<img src="images/logo.png" />
 		<div class="login_button">
-			<button type="button" class="btn btn-success btn-sm" id="logout"><a>Logout</a></button>
+			<button type="button" class="btn btn-success btn-sm" id="logout" style="margin-top:9%;"><a>Logout</a></button>
 		</div>			
 </header>
 <table class="table">
@@ -29,30 +29,31 @@
   <tbody id="bodyTable">
   </tbody>
 </table>
-<div class="page-footer">
-		<div class="col-md-6 col-sm-6 col-xs-6">
+	<div class="page-footer">
+		<div class="col-md-4 col-sm-4 col-xs-4">
 			<div class="footer-image">
 				<div class="feedback_button">
-					<button type="button" class="btn btn-success btn-sm">
-						<a href="application.html">View Applicant</a>
+					<button type="button" class="btn btn-success btn-sm" style="margin-top:9%;">
+						<a href="bar_graph.html" id="stat">statistics</a>
 					</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-6 col-xs-6">
+		<div class="col-md-4 col-sm-4 col-xs-4">
 			<div class="footer-image">
 				<div class="post_button">
-					<button type="button" class="btn btn-success btn-sm">
-						<a href="pevent.html">Post an event</a>
+					<button type="button" class="btn btn-success btn-sm" style="margin-top:9%;>
+						<a href="pevent.html" id="pevent">Post an event</a>
 					</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-6 col-xs-6">
+
+<div class="col-md-4 col-sm-4 col-xs-4">
 			<div class="footer-image">
-				<div class="post_button">
-					<button type="button" class="btn btn-success btn-sm">
-						<a href="bar_graph.html">Event statistics</a>
+				<div class="view_button">
+					<button type="button" class="btn btn-success btn-sm" style="margin-top:9%;>
+						<a  href="application.html" id="vapp">View Applicant</a>
 					</button>
 				</div>
 			</div>
@@ -60,6 +61,15 @@
 
 	</div>
 	<script type="text/javascript">
+	$("#pevent").click(function(){
+		window.location.href = "pevent.html"
+	});
+	$("#vapp").click(function(){
+		window.location.href = "application.html"
+	});
+	$("#stat").click(function(){
+		window.location.href = "bar_graph.html"
+	});
 		$(document).ready(function(){
 			$("#logout").click(function(){
 				window.location.href = "logout.html";

@@ -306,12 +306,13 @@ public class Account {
 				details.setSanitation(rs.getInt("sum"));
 			}
 		}
-		sql = "select sum(e_feedback) as sum,event_title from event_feedback,event where "
-				+ "event.event_id and event_feedback.event_id and event_feedback.school_id = ? group by event_feedback.e_feedback";
+		sql = "select event_title,sum(e_feedback) as sum from event,event_feedback where event.event_id = event_feedback.event_id and event.school_id = ? group by event_title";
 		
 		pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, school_id);
+		System.out.println(pstmt);
 		rs = pstmt.executeQuery();
+		
 		ArrayList<Events> event = new ArrayList<Events>();
 		while( rs.next() ){
 			Events events = new Events();

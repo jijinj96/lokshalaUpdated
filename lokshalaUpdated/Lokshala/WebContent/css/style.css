@@ -125,26 +125,26 @@ body {
     width: 90%;
     margin: 15px auto;
 }
-.fb{
+.create1{
 	  width: 46%;
   height: 45px;
   background: #fff;
   border-radius: 8px;
-  border: 1px solid #3b5998;
-  color: #3b5998;
-  font-size: 24px;
+  border: 1px solid #28AECF;
+  color: #28AECF;
+  font-size: 18px;
   cursor: pointer;
   transition: 0.2s ease-out;
   margin:2% 0% 4% 2%;
 }
-.gg{
+.create2{
 	  width: 46%;
   height: 45px;
   background: #fff;
   border-radius: 8px;
-  border: 1px solid #d62d20;
-  color: #d62d20;
-  font-size: 24px;
+  border: 1px solid #28AECF;
+  color: #28AECF;
+  font-size: 18px;
   cursor: pointer;
   transition: 0.2s ease-out;
   margin:2% 0% 0% 2%;
@@ -161,9 +161,9 @@ body {
   transition: 0.2s ease-out;
   margin:4% 0% 4% 2%;
 }
-.fb:hover,
-.fb:focus {
-  background: #3b5998;
+.create1:hover,
+.ceate1:focus {
+  background: #28AECF;
   color: #fff;
   outline: 0;
 }
@@ -173,9 +173,9 @@ body {
   color: #fff;
   outline: 0;
 }
-.gg:hover,
-.gg:focus {
-  background: #d62d20;
+.create2:hover,
+.create2:focus {
+  background: #28AECF;
   color: #fff;
   outline: 0;
 }

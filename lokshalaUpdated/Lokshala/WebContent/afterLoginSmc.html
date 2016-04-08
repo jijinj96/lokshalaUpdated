@@ -13,6 +13,8 @@
 <script src="js/jquery-1.11.0.min.js"></script>
 <!--events css-->
 <link rel="stylesheet" href="css/events.css">
+<link href="css/abtsmc.css" rel="stylesheet" type="text/css" />
+
 <!--script-->
 <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="js/bootstrap.min.js"></script>
@@ -41,13 +43,6 @@
 <header>
 		<img src="images/logo.png" />
 		<section class="main">
-			<form class="search" method="post" action="index.html" >
-				<input type="text" name="q" placeholder=""  id="search"/>
-				<ul class="results" >
-					<li><a href="index.html">Marathi Shala No.1<br /><span>Saphale</span></a></li>
-					<li><a href="index.html">Marol BMC School<br /><span>Andheri(E)</span></a></li>
-				</ul>
-			</form>
 		</section>	
 		<button class="hamburger">&#9776;</button>
 		<button class="cross">&#735;</button>		
@@ -96,8 +91,8 @@
 		<br>
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">  
-				<div class="corouselsettings">
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<div class="corouselsettings" style="  margin-left: -12%;  margin-right: 8%;">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:273px;">
 					<!-- Indicators -->
 						<ol class="carousel-indicators">
 							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -108,25 +103,25 @@
 					<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<img src="images/school.jpg" alt="school" style="width:100%; height:400px;">
+								<img src="images/school.jpg" alt="school" style="width:100%; height:273px;">
 								<div class="carousel-caption">
 									<h3> Development of the school</h3>
 								</div>
 							</div>
 							<div class="item">
-								<img src="images/rte.jpg" alt="rte" style="width:100%; height:400px;">
+								<img src="images/rte.jpg" alt="rte" style="width:100%; height:273px;">
 								<div class="carousel-caption">
 									<h3>Ensures right of every student</h3>
 								</div>
 							</div>
 							<div class="item">
-								<img src="images/parents.jpg" alt="rte" style="width:100%; height:400px;">
+								<img src="images/parents.jpg" alt="rte" style="width:100%; height:273px;">
 								<div class="carousel-caption">
 									<h3>Parents as leaders</h3>     
 								</div>
 							</div>
 							<div class="item">
-								<img src="images/teacher.png" alt="rte" style="width:100%; height:400px;">
+								<img src="images/teacher.png" alt="rte" style="width:100%; height:273px;">
 								<div class="carousel-caption">
 									<h3>Quality and efficiency of school</h3>
 								</div>
@@ -148,14 +143,16 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">  
 				<div class="smcbuttons">
-					<button type="button" class="btn btn-success btn-sm"><a href="smcReg.html">Apply for SMC</a></button>
+					<button type="button" class="btn btn-success btn-sm"  style="margin-top:4em; margin-left: -7em;"><a href="smcReg.html">Apply for SMC</a></button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="home-button">
-		<a class="btn-floating btn-large waves-effect waves-#43a047 green darken-1" href="eventAfterLogin.html"><i class="material-icons">home</i></a>
-	</div>
+<div class="home-button">
+<button type="button" class="btn btn-success btn-sm" style="    border-radius: 100%;    font-size: 30px; margin-top:17em;">
+                <a href="eventAfterLogin.html"><i class="fa fa-home"></i></a>
+    </button>
+           </div>
 
     <div class="page-footer">			
 		<div class="col-md-4 col-sm-4 col-xs-4">
@@ -185,7 +182,7 @@
 			<div class="modal-body" >
 				<section class="main" style="padding:10px;">
 					<form class="search" method="post" action="index.html" >
-						<select name="sname" id="schoolResults">
+						<select name="sname" id="schoolResults" style="width:100%;">
 							
 						</select>
 					</form>
