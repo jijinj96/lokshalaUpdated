@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--modify css-->
+<link href="css/modify.css" rel="stylesheet" type="text/css"/>
+<!--bootstrap-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<header>
+		<img src="images/logo.png" />
+		<div class="login_button">
+			<button type="button" class="btn btn-success btn-sm" id="logout"><a>Logout</a></button>
+		</div>			
+</header>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Parent Name</th>
+      <th>Student Name</th>
+      <th>Contact Number</th>
+	  <th>GR No</th>
+    </tr>
+  </thead>
+  <tbody id="bodyTable">
+  </tbody>
+</table>
+<div class="page-footer">
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<div class="footer-image">
+				<div class="feedback_button">
+					<button type="button" class="btn btn-success btn-sm">
+						<a href="application.html">View Applicant</a>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<div class="footer-image">
+				<div class="post_button">
+					<button type="button" class="btn btn-success btn-sm">
+						<a href="pevent.html">Post an event</a>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<div class="footer-image">
+				<div class="post_button">
+					<button type="button" class="btn btn-success btn-sm">
+						<a href="bar_graph.html">Event statistics</a>
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#logout").click(function(){
+				window.location.href = "logout.html";
+			});
+			
+			$.ajax({
+				url: 'ApplicantServlet',
+				type : 'POST',
+				dataType : 'json',
+				data : JSON.stringify({
+					"action"   : "checkAuthenticity"
+				}),
+				processData : false,
+				success : function(data, textStatus,
+						jQxhr) {
+					$('.profile-usertitle-name').html(data.pname);
+					var count = 0;
+					$.each(data.application,function(){
+						count++;
+						$('#bodyTable').append('<tr><th scope="row">'+count+'</th><td>'+this['name']+'</td><td>'+this['child-name']+'</td><td>'+this['contact']+'</td><td>'+this['id']+'</td></tr>');
+					});
+				},
+				error : function(jqXhr, textStatus,
+						errorThrown) {
+					console.log(jqXhr);
+				}
+			});
+		});
+
+	</script>
+</body>
+</html>

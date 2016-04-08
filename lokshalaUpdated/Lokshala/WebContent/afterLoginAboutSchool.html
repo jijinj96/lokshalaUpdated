@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<title>About School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--modify css-->
+<link href="css/modify.css" rel="stylesheet" type="text/css"/>
+<!--bootstrap-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!--script-->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!--events css-->
+<link rel="stylesheet" href="css/events.css">
+<!--script-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script type="text/javascript">
+	$( document ).ready(function() {
+	$(".cross").hide();
+	$(".menu").hide();
+	$(".hamburger").click(function() {
+	$(".menu").slideToggle("slow", function() {
+		$(".hamburger").hide();
+		$(".cross").show();
+		});
+	});
+
+	$(".cross").click(function() {
+	$(".menu").slideToggle("slow", function() {
+    $(".cross").hide();
+    $(".hamburger").show();
+  });
+});
+});
+</script>
+</head>
+<body>
+		<header>
+		<img src="images/logo.png" />
+		<section class="main">
+		</section>	
+		<button class="hamburger">&#9776;</button>
+		<button class="cross">&#735;</button>
+		 <div class="login_button">
+			<button type="button" class="btn btn-success btn-sm" id="logout"><a>Logout</a></button>
+		</div> 		
+	</header>
+	<div class="gap">
+	<div class="row">
+		<div class="col-xs-12 col-md-12 col-sm-12">
+			<div class="schooltitle"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1 col-sm-1 col-md-1"></div>
+			<div class="col-xs-10 col-md-10 col-sm-10 picture">
+				<img src="images/abt.jpg"  class="img-responsive"  />
+			</div>
+		<div class="col-xs-1 col-sm-1 col-md-1"></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<img src="images/clock.png" width=30px height=30px align=left></img>
+			<div class="office" id="time">
+				<P></P>
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<img src="images/address.png" width=30px height=30px align=left></img>
+			<div class="office" id="address">
+				<P>SAPHALE</P>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="home-button">
+	<a class="btn-floating btn-large waves-effect waves-#43a047 green darken-1" href="eventAfterLogin.html"><i class="material-icons">home</i></a>
+</div>
+
+
+    <div class="page-footer">			
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="footer-image">
+				<a href="#" data-toggle="modal" data-target="#myModal"><img src="images/facilityF.jpg" /></a>
+			</div>	
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="footer-image">
+				<a href="afterLoginAboutSchool.html"><img src="images/about schoolF.png" /></a>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="footer-image">
+				<a href="afterLoginSmc.html"><img src="images/SMC.jpg" /></a>
+			</div>
+		</div>
+	</div>
+	<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog" >
+		<!-- Modal content--> 
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Select School</h4>
+			</div>
+			<div class="modal-body" >
+				<section class="main" style="padding:10px;">
+					<form class="search" method="post" action="index.html" >
+						<select name="sname" id="schoolResults" class="dropdown">
+							
+						</select>
+					</form>
+				</section>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" id="checked">Select</button>
+			</div>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+	
+	
+	$(document).ready(function(){
+		$("#checked").click(function(){
+			var sname = $( "#schoolResults option:selected" ).text();
+			localStorage.setItem("sname", sname);
+			window.location.href = 'afterLoginFacilities.html';
+		});
+		var schoolname = localStorage.getItem("sname");
+		$.ajax({
+			url: 'GetSchoolInformation',
+			type : 'POST',
+			dataType : 'json',
+			data : JSON.stringify({
+				"action"   		: 'GetSchoolInformation',
+				"schoolName"	:  schoolname
+			}),
+			processData : false,
+			success : function(data, textStatus,
+					jQxhr) {
+				
+				$('#time p').html(data.timings);
+				$('.schooltitle').html(data.schoolName);
+				$('#address').html(data.address);	
+			},
+			error : function(jqXhr, textStatus,
+					errorThrown) {
+				console.log(errorThrown);
+			}
+		});
+		$.ajax({
+			url: 'EventsServlet',
+			type : 'POST',
+			dataType : 'json',
+			data : JSON.stringify({
+				"action"   : 'schoolDetails'
+			}),
+			processData : false,
+			success : function(data, textStatus,
+					jQxhr) {
+				$('.profile-usertitle-name').html(data.pname);
+				if(data.msg === 'unauthorised'){
+					window.location.href = 'eventBeforeLogin.html';
+				}
+					$.each(data.school , function(){
+						$('#schoolResults').append('<option value="'+this['school-name']+'">'+this['school-name']+'</option>');
+					});
+						
+			},
+			error : function(jqXhr, textStatus,
+					errorThrown) {
+				console.log(errorThrown);
+			}
+		});
+		
+		$("#logout").click(function(){
+			window.location.href = "logout.html";
+		});
+			
+		$.ajax({
+			url: 'LogoutServlet',
+			type : 'POST',
+			dataType : 'json',
+			data : JSON.stringify({
+				"action"   : "checkAuthenticity"
+			}),
+			processData : false,
+			success : function(data, textStatus,
+					jQxhr) {
+				$('.profile-usertitle-name').html(data.pname);
+					if(data.msg === 'unauthorised'){
+						window.location.href = "eventBeforeLogin.html"
+					}
+			},
+			error : function(jqXhr, textStatus,
+					errorThrown) {
+				console.log(jqXhr);
+			}
+		});
+	});
+	</script>
+</body>
+</html>
